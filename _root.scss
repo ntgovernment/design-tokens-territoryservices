@@ -1,0 +1,82 @@
+// CSS Custom Properties mapping for Bootstrap 5.3+ theming
+// Maps NT.GOV.AU design tokens to Bootstrap CSS custom properties
+
+@use "variables" as *;
+
+:root {
+  // Bootstrap Color System Override
+  --bs-blue: #{$primitive-colours-primary-blue-500};
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #{$primitive-colours-error-red-500};
+  --bs-orange: #{$primitive-colours-secondary-orange-aa-accessible};
+  --bs-yellow: #{$primitive-colours-warning-yellow-500};
+  --bs-green: #{$primitive-colours-success-green-500};
+  --bs-teal: #{$primitive-colours-tertiary-teal-500};
+  --bs-cyan: var(--bs-cyan);
+  --bs-white: #{$primitive-colours-white};
+  --bs-gray: #{$primitive-colours-charcoal-charcoal-300};
+  --bs-gray-dark: #{$primitive-colours-charcoal-charcoal-700};
+
+  // Bootstrap Semantic Colors
+  --bs-primary: var(--bs-orange);
+  --bs-secondary: $primitive-colours-neutral-grey-600;
+  --bs-success: var(--bs-green);
+  --bs-info: #{$primitive-colours-info-sky-500};
+  --bs-warning: #{$primitive-colours-warning-yellow-500};
+  --bs-danger: #{$primitive-colours-error-red-500};
+  --bs-light: #{$semantic-colours-border-light-grey-200};
+  --bs-dark: #{$semantic-colours-border-charcoal-700};
+
+  // Typography
+  --bs-font-sans-serif: #{$typography-font-text-paragraph-font-family},
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  // Bootstrap Gradient
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+
+  // Spacing overrides (Bootstrap uses rem-based spacing)
+  --bs-spacer: 1rem;
+
+  // Border radius
+  --bs-border-radius: $rounding-rounded-lg;
+  --bs-border-radius-sm: $rounding-rounded-sm;
+  --bs-border-radius-lg: $rounding-rounded-lg;
+  --bs-border-radius-xl: $spacing-24;
+  --bs-border-radius-2xl: $spacing-32;
+  --bs-border-radius-pill: $rounding-rounded-full;
+
+  // Border widths
+  --bs-border-width: var(--bs-border-width);
+
+  // Component specific overrides
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: $typography-font-text-paragraph-font-size;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: $typography-font-text-paragraph-line-height;
+  --bs-body-color: #{$semantic-colours-text-default-charcoal-700};
+  --bs-body-bg: #{$semantic-colours-bg-base-surface};
+
+  // Link colors
+  --bs-link-color: #{$semantic-colours-icon-emphasis-blue-500};
+  --bs-link-hover-color: #{$semantic-colours-text-link-blue-700};
+
+  // Focus ring
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: #{$semantic-colours-icon-emphasis-orange-700};
+
+  // Form controls
+  --bs-form-control-bg: #{$semantic-colours-btn-primary-bg-orange-aa};
+  --bs-form-control-color: #{$semantic-colours-btn-label-text-contrast-colour};
+  --bs-form-control-border-color: #{$semantic-colours-btn-primary-bg-orange-aa};
+}
