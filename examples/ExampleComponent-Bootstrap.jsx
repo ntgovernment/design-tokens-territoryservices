@@ -116,7 +116,8 @@ const ExampleComponent = () => {
               borderRadius: "0.375rem",
             }}
           >
-            This div uses Bootstrap CSS custom properties with Territory Services values
+            This div uses Bootstrap CSS custom properties with Territory
+            Services values
           </div>
         </div>
       </main>

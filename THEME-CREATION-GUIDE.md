@@ -5,6 +5,7 @@ This guide will walk you through creating a Bootstrap theme based on your Territ
 ## Overview
 
 This repository contains a single Bootstrap theme implementation that:
+
 - Uses Bootstrap 5.3+ CSS custom properties for theming
 - Overrides Bootstrap's default design tokens with Territory Services values
 - Provides a compiled CSS file for React applications
@@ -67,16 +68,17 @@ Create `_root.scss` to map your design tokens to Bootstrap CSS custom properties
   // Colors - Primary
   --bs-blue: #{$nt-gov-au-brand-colours-primary-blue-default};
   --bs-primary: #{$nt-gov-au-brand-colours-primary-blue-default};
-  
+
   // Colors - Semantic
   --bs-info: #{$semantic-colours-info-blue-default};
   --bs-success: #{$semantic-colours-success-green-default};
   --bs-warning: #{$semantic-colours-warning-orange-default};
   --bs-danger: #{$semantic-colours-danger-red-default};
-  
+
   // Typography
-  --bs-font-sans-serif: #{$nt-gov-au-brand-typography-font-family-primary}, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  
+  --bs-font-sans-serif: #{$nt-gov-au-brand-typography-font-family-primary}, system-ui,
+    -apple-system, "Segoe UI", Roboto, sans-serif;
+
   // Spacing (Bootstrap uses rem, convert from px)
   --bs-spacer: 1rem; // Base spacer
 }
@@ -97,7 +99,7 @@ Create `src/_buttons.scss` to customize Bootstrap buttons:
   --bs-btn-font-weight: 600;
   --bs-btn-line-height: #{$typography-sizing-line-height-body-md};
   --bs-btn-border-radius: #{$nt-gov-au-brand-basic-branded-elements-corner-radius-md};
-  
+
   // Apply the custom properties
   padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
   font-family: var(--bs-btn-font-family);
@@ -205,7 +207,7 @@ npm install design-tokens-ntgovau
 
 ```jsx
 // Import the theme CSS
-import 'design-tokens-ntgovau/dist/ntgovau-theme.css';
+import "design-tokens-ntgovau/dist/ntgovau-theme.css";
 
 function MyComponent() {
   return (
@@ -223,25 +225,25 @@ For theme switching, you'll load different theme CSS files:
 
 ```jsx
 // ThemeProvider.jsx
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect } from "react";
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('ntgovau');
+  const [theme, setTheme] = useState("ntgovau");
 
   useEffect(() => {
     // Remove existing theme
-    const existingLink = document.querySelector('link[data-theme]');
+    const existingLink = document.querySelector("link[data-theme]");
     if (existingLink) {
       existingLink.remove();
     }
 
     // Add new theme
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
     link.href = `/themes/${theme}-theme.css`;
-    link.setAttribute('data-theme', theme);
+    link.setAttribute("data-theme", theme);
     document.head.appendChild(link);
   }, [theme]);
 
@@ -262,7 +264,7 @@ function App() {
         <option value="territoryservices">Territory Services</option>
         <option value="other-theme">Other Theme</option>
       </select>
-      
+
       <button className="btn btn-primary">Themed Button</button>
     </div>
   );

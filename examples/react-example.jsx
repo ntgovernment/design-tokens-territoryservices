@@ -29,9 +29,10 @@ const ExampleComponent = () => {
           </h2>
 
           <p style={{ marginBottom: "24px" }}>
-            This is an example of how to use the Territory Services Bootstrap theme in a
-            React application. All Bootstrap classes work as expected, but now
-            they're styled with Territory Services design tokens.
+            This is an example of how to use the Territory Services Bootstrap
+            theme in a React application. All Bootstrap classes work as
+            expected, but now they're styled with Territory Services design
+            tokens.
           </p>
 
           <div
