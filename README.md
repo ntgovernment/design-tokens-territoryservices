@@ -1,6 +1,6 @@
-# NT.GOV.AU Bootstrap Theme
+# Territory Services Bootstrap Theme
 
-A Bootstrap 5.3+ compatible theme built with NT.GOV.AU design tokens. This theme maintains full Bootstrap compatibility while applying the NT Government visual identity through CSS custom properties.
+A Bootstrap 5.3+ compatible theme built with Territory Services design tokens. This theme maintains full Bootstrap compatibility while applying the Territory Services visual identity through CSS custom properties.
 
 ## 🚀 Quick Start
 
@@ -29,7 +29,7 @@ import "design-tokens-territoryservices/dist/territoryservices-theme.css";
 function App() {
   return (
     <div>
-      <h1>Welcome to NT.GOV.AU</h1>
+      <h1>Welcome to Territory Services</h1>
       <button className="btn btn-primary">Get Started</button>
     </div>
   );
@@ -39,7 +39,7 @@ function App() {
 ## 🎨 Features
 
 - **Bootstrap Compatible**: All standard Bootstrap classes work unchanged
-- **Design Token Driven**: Built from NT.GOV.AU design tokens
+- **Design Token Driven**: Built from Territory Services design tokens
 - **CSS Custom Properties**: Easy runtime theme switching
 - **Component Focused**: Systematic component customization
 - **Multi-Theme Ready**: Designed for theme switching applications
@@ -112,7 +112,7 @@ See `examples/ThemeSwitcher.jsx` for a complete implementation.
 
 ### Buttons
 
-All Bootstrap button classes are supported with NT.GOV.AU styling:
+All Bootstrap button classes are supported with Territory Services styling:
 
 ```html
 <button class="btn btn-primary">Primary</button>
@@ -127,7 +127,7 @@ All Bootstrap button classes are supported with NT.GOV.AU styling:
 
 ### Typography
 
-Bootstrap typography classes with NT.GOV.AU fonts and sizing:
+Bootstrap typography classes with Territory Services fonts and sizing:
 
 ```html
 <h1>Heading 1</h1>
@@ -138,7 +138,7 @@ Bootstrap typography classes with NT.GOV.AU fonts and sizing:
 
 ### Colors
 
-Bootstrap color utilities with NT.GOV.AU palette:
+Bootstrap color utilities with Territory Services palette:
 
 ```html
 <div class="bg-primary text-white">Primary background</div>
@@ -210,6 +210,6 @@ MIT License - see LICENSE file for details.
 
 ## 🔗 Related
 
-- [NT.GOV.AU Design System](https://designsystem.nt.gov.au/)
+- [Territory Services Design System](https://designsystem.nt.gov.au/)
 - [Bootstrap 5.3 Documentation](https://getbootstrap.com/docs/5.3/)
 - [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)

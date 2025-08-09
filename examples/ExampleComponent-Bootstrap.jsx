@@ -1,4 +1,4 @@
-// Example React component using NT.GOV.AU Design Tokens
+// Example React component using Territory Services Design Tokens
 // Save this as ExampleComponent.jsx in your React project
 
 import React from "react";
@@ -10,9 +10,9 @@ const ExampleComponent = () => {
     <div className="container-fluid">
       {/* Header section */}
       <header className="bg-dark text-white p-5">
-        <h1 className="h2 mb-3">NT.GOV.AU Bootstrap Theme</h1>
+        <h1 className="h2 mb-3">Territory Services Bootstrap Theme</h1>
         <p className="mb-0">
-          Using Bootstrap classes with NT.GOV.AU design tokens
+          Using Bootstrap classes with Territory Services design tokens
         </p>
       </header>
 
@@ -116,7 +116,7 @@ const ExampleComponent = () => {
               borderRadius: "0.375rem",
             }}
           >
-            This div uses Bootstrap CSS custom properties with NT.GOV.AU values
+            This div uses Bootstrap CSS custom properties with Territory Services values
           </div>
         </div>
       </main>
@@ -124,7 +124,7 @@ const ExampleComponent = () => {
       {/* Footer */}
       <footer className="bg-secondary p-4 text-center">
         <p className="small mb-0">
-          Built with Bootstrap classes and NT.GOV.AU Design Tokens
+          Built with Bootstrap classes and Territory Services Design Tokens
         </p>
       </footer>
     </div>

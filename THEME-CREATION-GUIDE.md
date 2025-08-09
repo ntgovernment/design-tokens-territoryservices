@@ -1,12 +1,12 @@
-# NT.GOV.AU Bootstrap Theme Creation Guide
+# Territory Services Bootstrap Theme Creation Guide
 
-This guide will walk you through creating a Bootstrap theme based on your NT.GOV.AU design tokens that can be used in a React application with theme switching capabilities.
+This guide will walk you through creating a Bootstrap theme based on your Territory Services design tokens that can be used in a React application with theme switching capabilities.
 
 ## Overview
 
 This repository contains a single Bootstrap theme implementation that:
 - Uses Bootstrap 5.3+ CSS custom properties for theming
-- Overrides Bootstrap's default design tokens with NT.GOV.AU values
+- Overrides Bootstrap's default design tokens with Territory Services values
 - Provides a compiled CSS file for React applications
 - Maintains compatibility with Bootstrap's utility classes
 - Supports theme switching through CSS custom property updates
@@ -62,7 +62,7 @@ Create the build configuration in `package.json`:
 Create `_root.scss` to map your design tokens to Bootstrap CSS custom properties:
 
 ```scss
-// Map NT.GOV.AU design tokens to Bootstrap CSS custom properties
+// Map Territory Services design tokens to Bootstrap CSS custom properties
 :root {
   // Colors - Primary
   --bs-blue: #{$nt-gov-au-brand-colours-primary-blue-default};
@@ -150,8 +150,8 @@ Create `src/index.scss` as the main compilation entry:
 
 ```scss
 /*!
- * NT.GOV.AU Bootstrap Theme
- * Based on Bootstrap 5.3+ with NT.GOV.AU Design Tokens
+ * Territory Services Bootstrap Theme
+ * Based on Bootstrap 5.3+ with Territory Services Design Tokens
  */
 
 // Import design tokens (read-only)
@@ -210,7 +210,7 @@ import 'design-tokens-ntgovau/dist/ntgovau-theme.css';
 function MyComponent() {
   return (
     <div>
-      <button className="btn btn-primary">NT.GOV.AU Button</button>
+      <button className="btn btn-primary">Territory Services Button</button>
       <button className="btn btn-secondary btn-sm">Secondary Small</button>
     </div>
   );
@@ -259,7 +259,7 @@ function App() {
   return (
     <div>
       <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-        <option value="ntgovau">NT.GOV.AU</option>
+        <option value="territoryservices">Territory Services</option>
         <option value="other-theme">Other Theme</option>
       </select>
       
@@ -290,7 +290,7 @@ To create additional themes:
 ## Next Steps
 
 1. **Expand Components**: Add more component customizations (forms, navigation, cards)
-2. **Create Utilities**: Custom utility classes for NT.GOV.AU specific needs
+2. **Create Utilities**: Custom utility classes for Territory Services specific needs
 3. **Add Documentation**: Component examples and usage guidelines
 4. **Create Variants**: Different theme variations (dark mode, high contrast)
 5. **Publish Package**: Make available via npm for easy consumption

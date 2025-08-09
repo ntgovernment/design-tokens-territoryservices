@@ -1,0 +1,77 @@
+// =============================================================================
+// Back to Top Button Component
+// =============================================================================
+//
+// Styles for the back-to-top button component using Territory Services design tokens.
+// This component creates a circular button with an icon that allows users to
+// quickly scroll back to the top of the page.
+//
+// Usage:
+//   <button class="btn back-to-top" type="button">
+//     <svg>...</svg>
+//     <span class="visually-hidden">Back to top</span>
+//   </button>
+//
+// Features:
+//   - Circular design with full border radius
+//   - Icon-only display (text labels are hidden)
+//   - Territory Services color scheme (charcoal background)
+//   - Accessible hover and focus states
+//   - Proper sizing for touch targets
+//
+// =============================================================================
+
+@use "../variables" as *;
+
+.btn.back-to-top {
+  // Button spacing and shape
+  --bs-btn-padding-x: #{$padding-p-3};
+  --bs-btn-border-radius: #{$rounding-rounded-full}; // Makes button circular
+  --bs-btn-font-weight: 600;
+
+  // Default state colors (charcoal theme)
+  --bs-btn-color: #{$semantic-colours-btn-label-text-contrast-colour};
+  --bs-btn-bg: #{$semantic-colours-bg-on-charcoal};
+  --bs-btn-border-color: #{$semantic-colours-bg-on-charcoal};
+
+  // Hover state colors
+  --bs-btn-hover-color: #{$semantic-colours-btn-label-text-contrast-colour};
+  --bs-btn-hover-bg: #{$semantic-colours-bg-hover-charcoal-700};
+  --bs-btn-hover-border-color: #{$semantic-colours-bg-hover-charcoal-700};
+
+  // Focus state (uses orange accent for visibility)
+  --bs-btn-focus-shadow-rgb: #{$semantic-colours-btn-primary-bg-hover-orange-700};
+
+  // Active/pressed state
+  --bs-btn-active-color: #{$semantic-colours-btn-label-text-contrast-colour};
+  --bs-btn-active-bg: #{$semantic-colours-bg-hover-charcoal-700};
+  --bs-btn-active-border-color: #{$semantic-colours-bg-hover-charcoal-700};
+
+  // Disabled state
+  --bs-btn-disabled-color: var(--bs-btn-color);
+  --bs-btn-disabled-bg: #{$semantic-colours-btn-primary-bg-disabled-grey-500};
+  --bs-btn-disabled-border-color: #{$semantic-colours-btn-primary-bg-disabled-grey-500};
+
+  // SVG icon sizing - uses button typography tokens for consistency
+  & svg {
+    width: #{$typography-font-text-button-line-height};
+    height: #{$typography-font-text-button-font-size};
+  }
+
+  // Hide text content to create icon-only button
+  // This preserves accessibility while showing only the icon
+  & span:not(:has(svg)),    // Hide spans that don't contain SVG
+  & .sr-only,               // Hide screen reader only text
+  & .visually-hidden {
+    // Hide bootstrap visually hidden text
+    display: none;
+  }
+
+  // Hide any direct text nodes within the button
+  font-size: 0;
+
+  // Restore font-size for SVG to ensure proper rendering
+  & svg {
+    font-size: initial;
+  }
+}

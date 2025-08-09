@@ -1,4 +1,4 @@
-// NT.GOV.AU Bootstrap Theme
+// Territory Services Bootstrap Theme
 // Main theme entry point
 
 // Import design tokens and CSS custom properties
@@ -7,6 +7,7 @@
 
 // Import component customizations
 @use "buttons";
+@use "backtotopbutton";
 
 // Global theme styles
 body {

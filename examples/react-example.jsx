@@ -1,4 +1,4 @@
-// Example React component showing how to use the NT.GOV.AU Bootstrap theme
+// Example React component showing how to use the Territory Services Bootstrap theme
 // Save this as ExampleComponent.jsx in your React project
 
 import React from "react";
@@ -14,10 +14,10 @@ const ExampleComponent = () => {
         style={{ padding: "40px 20px" }}
       >
         <h1 className="h2" style={{ marginBottom: "16px" }}>
-          NT.GOV.AU Application
+          Territory Services Application
         </h1>
         <p style={{ marginBottom: 0 }}>
-          Built with Bootstrap and NT.GOV.AU design tokens
+          Built with Bootstrap and Territory Services design tokens
         </p>
       </header>
 
@@ -29,9 +29,9 @@ const ExampleComponent = () => {
           </h2>
 
           <p style={{ marginBottom: "24px" }}>
-            This is an example of how to use the NT.GOV.AU Bootstrap theme in a
+            This is an example of how to use the Territory Services Bootstrap theme in a
             React application. All Bootstrap classes work as expected, but now
-            they're styled with NT.GOV.AU design tokens.
+            they're styled with Territory Services design tokens.
           </p>
 
           <div
@@ -160,7 +160,7 @@ const ExampleComponent = () => {
         style={{ padding: "20px", textAlign: "center" }}
       >
         <p className="text-muted" style={{ margin: 0 }}>
-          Built with NT.GOV.AU Design Tokens
+          Built with Territory Services Design Tokens
         </p>
       </footer>
     </div>
