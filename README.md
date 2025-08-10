@@ -125,6 +125,48 @@ All Bootstrap button classes are supported with Territory Services styling:
 <button class="btn btn-primary btn-lg">Large</button>
 ```
 
+### Accordion
+
+Bootstrap accordion components with Territory Services styling:
+
+```html
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >
+        Accordion Item #1
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">Your content here...</div>
+    </div>
+  </div>
+</div>
+```
+
+**Features:**
+
+- 8px border-radius on all accordion items and buttons
+- Territory Services color scheme and typography
+- Hover effects with subtle drop shadows
+- 8px vertical spacing between accordion items
+- Smooth transitions and animations
+- Proper focus states with orange focus ring
+
+**Requirements:** Bootstrap JavaScript bundle is required for accordion functionality.
+
 ### Typography
 
 Bootstrap typography classes with Territory Services fonts and sizing:

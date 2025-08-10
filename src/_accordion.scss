@@ -1,0 +1,153 @@
+@use "../variables" as *;
+@use "sass:string";
+@use "sass:meta";
+
+// Accordion component customization using Bootstrap CSS custom properties
+// This approach maintains Bootstrap compatibility while applying Territory Services design tokens
+//
+// Features implemented:
+// - Typography: Roboto font family with proper weight (700) and sizing using Territory Services tokens
+// - Colors: Territory Services semantic colors for text, borders, and backgrounds
+// - Spacing: Consistent padding and margins using Territory Services gap tokens
+// - Border radius: 8px rounded corners using $rounding-rounded-lg on all accordion items and buttons
+// - Borders: Light grey borders with special handling for collapsed states
+// - Interactive states: Hover effects with drop shadows and proper focus states
+// - Icons: Custom SVG icons with Territory Services blue color scheme
+// - Layout: Individual rounded accordion items with 8px vertical spacing between them
+// - Animations: Smooth transitions for all interactive states and shadow effects
+// - Accessibility: Proper focus states with Territory Services orange focus ring
+// - Bootstrap compatibility: Uses CSS custom properties to override Bootstrap defaults
+// - Interactive: Requires Bootstrap JS bundle for full functionality (included in preview.html)
+$accordion-transition: all 0.2s ease-in-out;
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#{string.slice(meta.inspect($semantic-colours-icon-emphasis-blue-500), 2)}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#{string.slice(meta.inspect($semantic-colours-icon-emphasis-blue-500), 2)}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-hover-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#{string.slice(meta.inspect($semantic-colours-icon-emphasis-blue-500), 2)}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-icon-transition: transform 0.2s ease-in-out;
+$accordion-icon-transform: rotate(
+  180deg
+); // Changed to 180deg (pointing up when expanded)
+
+.accordion {
+  // Override Bootstrap's accordion CSS custom properties with NT.GOV.AU values
+  --bs-accordion-color: #{$semantic-colours-text-default-charcoal-700};
+  --bs-accordion-bg: #{$semantic-colours-bg-base-surface};
+  --bs-accordion-transition: #{$accordion-transition};
+  --bs-accordion-border-width: #{$gap-gap-0};
+  --bs-accordion-border-radius: #{$rounding-rounded-lg};
+  --bs-accordion-inner-border-radius: #{$rounding-rounded-lg};
+  --bs-accordion-btn-padding-x: #{$gap-gap-6};
+  --bs-accordion-btn-padding-y: #{$gap-gap-6};
+  --bs-accordion-btn-color: #{$semantic-colours-text-default-charcoal-700};
+  --bs-accordion-btn-bg: #{$semantic-colours-btn-label-text-contrast-colour};
+  --bs-accordion-btn-font-family: #{$typography-font-h5-font-family};
+  --bs-accordion-btn-font-size: #{$typography-size-h5};
+  --bs-accordion-btn-font-weight: 700;
+  --bs-accordion-btn-line-height: #{$typography-line-height-h5};
+  --bs-accordion-btn-icon: #{$accordion-button-icon};
+  --bs-accordion-btn-icon-width: 1.25rem;
+  --bs-accordion-btn-icon-transform: #{$accordion-icon-transform};
+  --bs-accordion-btn-icon-transition: #{$accordion-icon-transition};
+  --bs-accordion-btn-active-icon: #{$accordion-button-active-icon};
+  --bs-accordion-btn-focus-border-color: transparent;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{$semantic-colours-btn-focus-ring-orange-300};
+  --bs-accordion-body-padding-x: #{$gap-gap-6};
+  --bs-accordion-body-padding-y: #{$gap-gap-6};
+  --bs-accordion-active-color: #{$semantic-colours-text-default-charcoal-700};
+  --bs-accordion-active-bg: #{$semantic-colours-bg-base-surface};
+}
+
+// Accordion button customizations
+.accordion-button {
+  font-family: var(--bs-accordion-btn-font-family);
+  font-weight: var(--bs-accordion-btn-font-weight);
+  font-size: var(--bs-accordion-btn-font-size);
+  line-height: var(--bs-accordion-btn-line-height);
+  color: #{$semantic-colours-btn-label-text-grey-700};
+
+  // Remove all borders from button and add border-radius
+  border: none;
+  border-bottom: none !important;
+  border-radius: #{$rounding-rounded-lg};
+
+  &:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: var(--bs-accordion-active-bg);
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+      var(--bs-accordion-border-color);
+  }
+
+  &:hover {
+    color: #{$semantic-colours-btn-label-text-grey-700};
+    background-color: #{$semantic-colours-btn-label-text-contrast-colour};
+
+    &::after {
+      background-image: #{$accordion-button-hover-icon};
+    }
+  }
+
+  &:not(.collapsed):hover {
+    &::after {
+      background-image: #{$accordion-button-hover-icon};
+    }
+  }
+
+  &:focus {
+    z-index: 3;
+    border: var(--bs-accordion-border-width) solid
+      var(--bs-accordion-btn-focus-border-color);
+    outline: 0;
+    box-shadow: var(--bs-accordion-btn-focus-box-shadow);
+  }
+
+  &::after {
+    flex-shrink: 0;
+    width: var(--bs-accordion-btn-icon-width);
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    content: "";
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: var(--bs-accordion-btn-icon-transition);
+    transform: rotate(0deg); // Default state: pointing down
+  }
+
+  &:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    transform: var(
+      --bs-accordion-btn-icon-transform
+    ); // Expanded state: pointing up
+  }
+}
+
+// Accordion body customizations
+.accordion-body {
+  font-size: #{$typography-size-text-paragraph};
+  line-height: #{$typography-line-height-text-paragraph};
+}
+
+// Accordion item customizations for consistent spacing
+.accordion-item {
+  border: 1px solid #{$semantic-colours-border-light-grey-200};
+  border-radius: #{$rounding-rounded-lg};
+  margin-bottom: #{$gap-gap-2};
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  // Apply drop shadow on accordion button hover
+  &:hover {
+    box-shadow: 0 0 12px 0 #00000014;
+  }
+
+  // Apply top border when accordion item is collapsed
+  &:has(.accordion-button.collapsed) {
+    border-top: 1px solid #{$semantic-colours-border-light-grey-200};
+  }
+
+  .accordion-collapse {
+    border-radius: 0 0 #{$rounding-rounded-lg} #{$rounding-rounded-lg};
+  }
+}

@@ -72,22 +72,28 @@ Your button customization is in `src/_buttons.scss`. The approach used:
 
 ### 5. Add More Components
 
-Follow the same pattern for other components:
+The theme already includes a fully-featured accordion component (`src/_accordion.scss`). Follow the same pattern for other components:
 
 ```scss
 // Example: src/_forms.scss
 .form-control {
-  --bs-form-control-color: #{$nt-gov-au-brand-typography-text-colours-text-body-default};
-  --bs-form-control-bg: #{$nt-gov-au-brand-basic-branded-elements-surface-colours-page-primary};
-  --bs-form-control-border-color: #{$nt-gov-au-brand-basic-branded-elements-border-accent-colours-border-subtle};
+  --bs-form-control-color: #{$semantic-colours-text-default-charcoal-700};
+  --bs-form-control-bg: #{$semantic-colours-bg-base-surface};
+  --bs-form-control-border-color: #{$semantic-colours-border-light-grey-200};
 }
 ```
 
 Then import it in `src/index.scss`:
 
 ```scss
-@import "forms";
+@use "forms";
 ```
+
+**Existing Components:**
+
+- ✅ Buttons (`_buttons.scss`) - All Bootstrap button variants with Territory Services styling
+- ✅ Accordion (`_accordion.scss`) - Complete accordion implementation with hover effects, proper spacing, and Territory Services design tokens
+- ✅ Back to Top Button (`_backtotopbutton.scss`) - Custom floating action button
 
 ## 🎨 Theme Switching Setup
 
