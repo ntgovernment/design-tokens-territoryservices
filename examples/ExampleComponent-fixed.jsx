@@ -10,9 +10,7 @@ const ExampleComponent = () => {
     <div className="container-fluid">
       {/* Header section */}
       <header className="bg-dark text-white p-5">
-        <h1 className="h2 mb-3">
-          Territory Services Bootstrap Theme
-        </h1>
+        <h1 className="h2 mb-3">Territory Services Bootstrap Theme</h1>
         <p className="mb-0">
           Using Bootstrap classes with Territory Services design tokens
         </p>
@@ -21,9 +19,7 @@ const ExampleComponent = () => {
       {/* Main content */}
       <main className="p-5">
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            Typography Examples
-          </h2>
+          <h2 className="h3 mb-4">Typography Examples</h2>
 
           <h3 className="h4 mb-3">Headings</h3>
           <h1 className="h1">Heading 1</h1>
@@ -34,50 +30,34 @@ const ExampleComponent = () => {
           <h6 className="h6">Heading 6</h6>
 
           <h3 className="h4 mb-3">Body Text</h3>
-          <p className="fs-5">
-            Large body text for important content
-          </p>
-          <p>
-            Medium body text for regular content
-          </p>
-          <p className="small">
-            Small body text for secondary information
-          </p>
+          <p className="fs-5">Large body text for important content</p>
+          <p>Medium body text for regular content</p>
+          <p className="small">Small body text for secondary information</p>
         </div>
 
         {/* Button examples */}
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            Button Examples
-          </h2>
+          <h2 className="h3 mb-4">Button Examples</h2>
           <div className="mb-4">
-            <button className="btn btn-primary me-3">
-              Primary Button
-            </button>
-            <button className="btn btn-secondary me-3">
-              Secondary Button
-            </button>
+            <button className="btn btn-primary me-3">Primary Button</button>
+            <button className="btn btn-secondary me-3">Secondary Button</button>
             <button className="btn btn-outline-primary me-3">
               Outline Primary
             </button>
           </div>
-          
+
           <div className="mb-4">
             <button className="btn btn-primary btn-sm me-3">
               Small Button
             </button>
-            <button className="btn btn-primary me-3">
-              Default Button
-            </button>
+            <button className="btn btn-primary me-3">Default Button</button>
             <button className="btn btn-primary btn-lg me-3">
               Large Button
             </button>
           </div>
-          
+
           <div className="mb-4">
-            <button className="btn btn-primary me-3">
-              Normal
-            </button>
+            <button className="btn btn-primary me-3">Normal</button>
             <button className="btn btn-primary me-3" disabled>
               Disabled Button
             </button>
@@ -86,9 +66,7 @@ const ExampleComponent = () => {
 
         {/* Accordion examples */}
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            Accordion Examples
-          </h2>
+          <h2 className="h3 mb-4">Accordion Examples</h2>
           <div className="accordion" id="accordionExample">
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
@@ -110,7 +88,8 @@ const ExampleComponent = () => {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  This is the first item's accordion body with Territory Services styling.
+                  This is the first item's accordion body with Territory
+                  Services styling.
                 </div>
               </div>
             </div>
@@ -134,8 +113,8 @@ const ExampleComponent = () => {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  This is the second item's accordion body. It features rounded corners, 
-                  hover effects, and proper spacing.
+                  This is the second item's accordion body. It features rounded
+                  corners, hover effects, and proper spacing.
                 </div>
               </div>
             </div>
@@ -159,8 +138,8 @@ const ExampleComponent = () => {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  This is the third item's accordion body with all Territory Services 
-                  design tokens applied.
+                  This is the third item's accordion body with all Territory
+                  Services design tokens applied.
                 </div>
               </div>
             </div>
@@ -169,9 +148,7 @@ const ExampleComponent = () => {
 
         {/* Color examples */}
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            Bootstrap Color Classes
-          </h2>
+          <h2 className="h3 mb-4">Bootstrap Color Classes</h2>
 
           <div className="mb-4">
             <h3 className="h5 mb-3">Text Colors</h3>
@@ -186,66 +163,45 @@ const ExampleComponent = () => {
 
           <div className="mb-4">
             <h3 className="h5 mb-3">Background Colors</h3>
-            <div className="bg-info p-3 mb-3">
-              Info background
-            </div>
-            <div className="bg-success p-3 mb-3">
-              Success background
-            </div>
-            <div className="bg-warning p-3 mb-3">
-              Warning background
-            </div>
-            <div className="bg-danger p-3 mb-3">
-              Danger background
-            </div>
-            <div className="bg-light p-3 mb-3">
-              Light background
-            </div>
-            <div className="bg-secondary p-3 mb-3">
-              Secondary background
-            </div>
+            <div className="bg-info p-3 mb-3">Info background</div>
+            <div className="bg-success p-3 mb-3">Success background</div>
+            <div className="bg-warning p-3 mb-3">Warning background</div>
+            <div className="bg-danger p-3 mb-3">Danger background</div>
+            <div className="bg-light p-3 mb-3">Light background</div>
+            <div className="bg-secondary p-3 mb-3">Secondary background</div>
           </div>
         </div>
 
         {/* Bootstrap Grid example */}
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            Bootstrap Grid System
-          </h2>
-          
+          <h2 className="h3 mb-4">Bootstrap Grid System</h2>
+
           <div className="row">
             <div className="col-md-4">
-              <div className="bg-primary text-white p-3 mb-3">
-                Column 1
-              </div>
+              <div className="bg-primary text-white p-3 mb-3">Column 1</div>
             </div>
             <div className="col-md-4">
-              <div className="bg-secondary p-3 mb-3">
-                Column 2
-              </div>
+              <div className="bg-secondary p-3 mb-3">Column 2</div>
             </div>
             <div className="col-md-4">
-              <div className="bg-info p-3 mb-3">
-                Column 3
-              </div>
+              <div className="bg-info p-3 mb-3">Column 3</div>
             </div>
           </div>
         </div>
 
         {/* CSS Custom Properties example */}
         <div className="mb-5">
-          <h2 className="h3 mb-4">
-            CSS Custom Properties
-          </h2>
+          <h2 className="h3 mb-4">CSS Custom Properties</h2>
           <div
             style={{
-              backgroundColor: 'var(--bs-primary)',
-              color: 'var(--bs-white)',
-              padding: '1rem',
-              borderRadius: '0.375rem'
+              backgroundColor: "var(--bs-primary)",
+              color: "var(--bs-white)",
+              padding: "1rem",
+              borderRadius: "0.375rem",
             }}
           >
-            This div uses Bootstrap CSS custom properties with Territory Services values
+            This div uses Bootstrap CSS custom properties with Territory
+            Services values
           </div>
         </div>
       </main>
