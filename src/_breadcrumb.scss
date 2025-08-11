@@ -1,0 +1,13 @@
+@use "../variables" as *;
+
+// Breadcrumb component customization using Bootstrap CSS custom properties
+// This approach maintains Bootstrap compatibility while applying Territory Services design tokens
+
+.breadcrumb {
+  svg {
+    height: #{$typography-font-text-sm-font-size};
+    width: #{$typography-font-text-sm-font-size};
+    flex-shrink: 0;
+    color: #{$semantic-colours-btn-icon-bg-charcoal-700};
+  }
+}

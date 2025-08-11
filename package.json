@@ -1,13 +1,16 @@
 {
   "name": "design-tokens-territoryservices",
   "version": "1.0.0",
-  "description": "Territory Services Bootstrap theme based on design tokens",
+  "description": "Bootstrap 5.3+ compatible theme built with Territory Services design tokens. Includes accordion, buttons, navigation, and typography components with hover effects and accessibility features.",
   "keywords": [
     "design-tokens",
     "bootstrap",
     "theme",
     "territoryservices",
-    "css"
+    "css",
+    "accordion",
+    "components",
+    "accessibility"
   ],
   "main": "dist/territoryservices-theme.css",
   "files": [

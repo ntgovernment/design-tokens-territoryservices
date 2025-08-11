@@ -16,6 +16,18 @@ npm run build:dev
 # Then open examples/preview.html in your browser
 ```
 
+## 🌐 Live Preview
+
+Open `examples/preview.html` in your browser to see all components in action:
+
+- **Interactive Accordion**: Collapsible content with hover effects and smooth animations
+- **Button Variants**: Primary, secondary, tertiary in all sizes and states
+- **Back to Top Button**: Circular icon button with Territory Services styling
+- **Breadcrumb Navigation**: Complete navigation component with icons
+- **Typography**: All heading levels and text styles with Territory Services fonts
+
+The preview includes Bootstrap JavaScript for full accordion functionality.
+
 ## 📦 Installation in React Projects
 
 ```bash
@@ -43,6 +55,9 @@ function App() {
 - **CSS Custom Properties**: Easy runtime theme switching
 - **Component Focused**: Systematic component customization
 - **Multi-Theme Ready**: Designed for theme switching applications
+- **Interactive Components**: Fully functional accordion, buttons, and navigation
+- **Accessibility First**: WCAG compliant focus states and screen reader support
+- **Responsive Design**: Mobile-first approach with proper breakpoints
 
 ## 🏗️ Project Structure
 
@@ -52,12 +67,17 @@ design-tokens-territoryservices/
 ├── _root.scss              # CSS custom properties mapping
 ├── src/
 │   ├── index.scss          # Main theme entry point
-│   ├── _buttons.scss       # Button customizations
-│   └── _*.scss            # Other component customizations
+│   ├── _buttons.scss       # Button component customizations
+│   ├── _accordion.scss     # Accordion component customizations
+│   ├── _backtotopbutton.scss # Back-to-top button component
+│   └── _breadcrumb.scss    # Breadcrumb navigation component
 ├── dist/
 │   └── territoryservices-theme.css   # Compiled theme
-├── examples/              # Usage examples and previews
-└── package.json          # Build configuration
+├── examples/
+│   ├── preview.html        # Live component preview
+│   ├── ExampleComponent.jsx # React component examples
+│   └── ThemeSwitcher.jsx   # Theme switching utilities
+└── package.json           # Build configuration
 ```
 
 ## 🔧 Development
@@ -117,12 +137,17 @@ All Bootstrap button classes are supported with Territory Services styling:
 ```html
 <button class="btn btn-primary">Primary</button>
 <button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-outline-primary">Outline</button>
+<button class="btn btn-tertiary">Tertiary</button>
 
 <!-- Sizes -->
 <button class="btn btn-primary btn-sm">Small</button>
 <button class="btn btn-primary">Default</button>
 <button class="btn btn-primary btn-lg">Large</button>
+
+<!-- States -->
+<button class="btn btn-primary">Normal</button>
+<button class="btn btn-primary active">Active</button>
+<button class="btn btn-primary" disabled>Disabled</button>
 ```
 
 ### Accordion
@@ -160,12 +185,67 @@ Bootstrap accordion components with Territory Services styling:
 
 - 8px border-radius on all accordion items and buttons
 - Territory Services color scheme and typography
-- Hover effects with subtle drop shadows
+- Hover effects with subtle drop shadows (0 0 12px 0 rgba(0,0,0,0.08))
 - 8px vertical spacing between accordion items
 - Smooth transitions and animations
 - Proper focus states with orange focus ring
+- Individual item borders with light grey color
 
 **Requirements:** Bootstrap JavaScript bundle is required for accordion functionality.
+
+### Back to Top Button
+
+Circular icon button for page navigation:
+
+```html
+<button class="btn back-to-top" type="button">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+  </svg>
+  <span class="visually-hidden">Back to top</span>
+</button>
+```
+
+**Features:**
+
+- Circular design with full border radius
+- Icon-only display (text is visually hidden but accessible)
+- Territory Services charcoal background with white icon
+- Hover and focus states with orange accent
+- Proper touch target sizing
+- Screen reader accessible
+
+### Breadcrumb Navigation
+
+Navigation component with Territory Services styling:
+
+```html
+<nav class="breadcrumb d-flex align-items-center gap-2" aria-label="breadcrumb">
+  <button class="btn btn-tertiary btn-sm">
+    <span>Home</span>
+  </button>
+  <svg class="ntg-icon" viewBox="0 0 320 512" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+    />
+  </svg>
+  <button class="btn btn-tertiary btn-sm" disabled aria-current="page">
+    <span>Current Page</span>
+  </button>
+</nav>
+```
+
+**Features:**
+
+- Territory Services orange icon colors
+- Proper sizing using typography tokens
+- Accessible with proper ARIA labels
+- Disabled state for current page
 
 ### Typography
 

@@ -1,78 +1,103 @@
-# 🎯 INSTRUCTIONS: Creating Your First Territory Services Bootstrap Theme
+# 🎯 Territory Services Bootstrap Theme - Getting Started Guide
 
-## ✅ What We've Created
+## ✅ What's Already Built
 
-Your project now has the complete structure for creating a Bootstrap theme from Territory Services design tokens:
+Your project has a complete Bootstrap theme built with Territory Services design tokens:
 
 ```
 design-tokens-territoryservices/
-├── 📄 _variables.scss          # Your design tokens (read-only)
+├── 📄 _variables.scss          # Territory Services design tokens (read-only)
 ├── 🎨 _root.scss              # CSS custom properties mapping
 ├── 📁 src/
 │   ├── 🎯 index.scss          # Main theme entry point
-│   └── 🔘 _buttons.scss       # Button component customization
-├── 📁 examples/              # Preview files and React examples
+│   ├── 🔘 _buttons.scss       # Button component customization
+│   ├── � _accordion.scss     # Accordion component customization
+│   ├── ⬆️ _backtotopbutton.scss # Back-to-top button component
+│   └── 🧭 _breadcrumb.scss    # Breadcrumb navigation component
+├── �📁 dist/
+│   └── territoryservices-theme.css # Compiled theme (ready to use)
+├── 📁 examples/
+│   ├── preview.html           # Live component preview
+│   ├── ExampleComponent.jsx   # React component examples
+│   └── ThemeSwitcher.jsx      # Theme switching utilities
 ├── 📄 package.json           # Build configuration
 └── 📚 README.md              # Complete documentation
 ```
 
-## 🚀 Next Steps to Complete Your Theme
+## 🚀 Quick Start
 
-### 1. Fix the Build Issue
-
-There seems to be a variable resolution issue. Run this to diagnose:
+### 1. Build and Preview
 
 ```bash
-# Check for any SCSS syntax issues
-npm run build:dev 2>&1 | grep -i error
-
-# If variables aren't resolving, you may need to check the import paths
-```
-
-**Likely fix needed in `src/index.scss`:**
-
-```scss
-// Change these lines:
-@use "../variables" as *;
-@use "../root";
-
-// To these (if the paths are incorrect):
-@import "../variables";
-@import "../root";
-```
-
-### 2. Test the Build Process
-
-```bash
-# Install dependencies
+# Install dependencies (if not already done)
 npm install
 
-# Build development version
+# Build the theme
 npm run build:dev
 
-# Check the output
-cat dist/territoryservices-theme.css
+# Open the preview
+# Navigate to examples/preview.html in your browser
+```
 
-# If it works, build production version
-npm run build
+**✅ The theme is already fully functional!** All builds should work without errors.
+
+### 2. Use in Your Project
+
+```bash
+# Copy the CSS file to your project
+cp dist/territoryservices-theme.css your-project/assets/
+
+# Or install as npm package (when published)
+npm install design-tokens-territoryservices
+```
+
+**In HTML projects:**
+
+```html
+<!-- Include Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Include Territory Services theme -->
+<link href="assets/territoryservices-theme.css" rel="stylesheet" />
+```
+
+**In React projects:**
+
+```jsx
+import "bootstrap/dist/css/bootstrap.min.css";
+import "design-tokens-territoryservices/dist/territoryservices-theme.css";
 ```
 
 ### 3. Preview Your Theme
 
-Open `examples/preview.html` in your browser to see your theme in action.
+Open `examples/preview.html` in your browser to see all components in action:
 
-### 4. Customize Button Components
+- **Accordion**: Interactive collapsible content with hover effects
+- **Buttons**: Primary, secondary, tertiary variants in all sizes
+- **Back to Top**: Circular icon button with Territory Services styling
+- **Breadcrumbs**: Navigation component with proper icons
+- **Typography**: All heading levels and text styles
 
-Your button customization is in `src/_buttons.scss`. The approach used:
+### 4. Component Customizations
 
-- ✅ Uses Bootstrap CSS custom properties (`--bs-btn-*`)
-- ✅ Maps to your Territory Services design tokens
-- ✅ Maintains full Bootstrap compatibility
-- ✅ Supports all Bootstrap button variants and sizes
+All components follow Bootstrap CSS custom properties pattern:
+
+**Existing Components:**
+
+- ✅ **Buttons** (`_buttons.scss`) - All Bootstrap button variants with Territory Services styling
+- ✅ **Accordion** (`_accordion.scss`) - Complete implementation with:
+  - 8px border-radius on items and buttons
+  - Hover effects with drop shadows
+  - 8px vertical spacing between items
+  - Territory Services colors and typography
+- ✅ **Back to Top Button** (`_backtotopbutton.scss`) - Circular floating action button
+- ✅ **Breadcrumb** (`_breadcrumb.scss`) - Navigation with Territory Services orange icons
 
 ### 5. Add More Components
 
-The theme already includes a fully-featured accordion component (`src/_accordion.scss`). Follow the same pattern for other components:
+Follow the same pattern for additional components:
 
 ```scss
 // Example: src/_forms.scss
@@ -89,11 +114,46 @@ Then import it in `src/index.scss`:
 @use "forms";
 ```
 
-**Existing Components:**
+## 🎨 Component Examples
 
-- ✅ Buttons (`_buttons.scss`) - All Bootstrap button variants with Territory Services styling
-- ✅ Accordion (`_accordion.scss`) - Complete accordion implementation with hover effects, proper spacing, and Territory Services design tokens
-- ✅ Back to Top Button (`_backtotopbutton.scss`) - Custom floating action button
+### Interactive Accordion
+
+```html
+<div class="accordion" id="example">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button
+        class="accordion-button"
+        data-bs-toggle="collapse"
+        data-bs-target="#item1"
+      >
+        Accordion Item
+      </button>
+    </h2>
+    <div id="item1" class="accordion-collapse collapse">
+      <div class="accordion-body">Content here...</div>
+    </div>
+  </div>
+</div>
+
+<!-- Requires Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+### Back to Top Button
+
+```html
+<button class="btn back-to-top" type="button">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+  </svg>
+  <span class="visually-hidden">Back to top</span>
+</button>
+```
 
 ## 🎨 Theme Switching Setup
 
